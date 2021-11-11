@@ -21,8 +21,17 @@ class ApplicationController < Sinatra::Base
   
   get '/baked_goods/by_price' do
     price = BakedGood.all.order(:price)
-    binding.pry
     price.to_json
   end
+
+  get 'backed_goods/most_expensive' do
+
+    binding.pry
+
+    most_expensive  = BakedGood.price.map do |item_expensive|
+    item_expensive
+    end
+  end
+
 
 end
